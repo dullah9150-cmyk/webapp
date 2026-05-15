@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+/* Global Styles */
+:root {
+  --primary: #ffc107;
+  --secondary: #212529;
+  --light: #f8f9fa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.min-vh-80 {
+  min-height: 80vh;
+}
+
+.hero-image-container {
+  position: relative;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  max-width: 200px;
+}
+
+/* Underline */
+.underline {
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  margin-bottom: 2rem;
+}
+
+/* Cards Hover Effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Menu Images */
+.menu-img {
+  transition: transform 0.5s ease;
+}
+
+.menu-img:hover {
+  transform: scale(1.05);
+}
+
+/* Experience Badge */
+.experience-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Contact Icons */
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Social Icons */
+.social-icon {
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social-icon:hover {
+  background: white !important;
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .display-3 {
+    font-size: 2.5rem;
   }
+  
+  .floating-card {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+}
+/* Login Page Styles */
+.login-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-page .input-group-text {
+  transition: all 0.3s ease;
+}
+
+.login-page .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+  border-color: #ffc107;
+}
+
+.login-page .btn-warning {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.login-page .btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+.login-page .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Card hover effect */
+.login-page .card {
+  transition: transform 0.3s ease;
+}
+
+.login-page .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Padding */
+section {
+  scroll-margin-top: 80px;
 }
